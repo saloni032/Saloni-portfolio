@@ -3,175 +3,729 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Saloni Bhatia | QA Engineer Portfolio</title>
+  <title>Saloni Bhatia | Senior QA Engineer & Test Automation Specialist</title>
+  <meta name="description" content="Portfolio of Saloni Bhatia - QA Engineer specializing in Salesforce Testing, Manual Exploratory QA, Automation Frameworks (Selenium, Playwright, TestNG), and API Validation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
   <style>
     :root {
-      --bg: #0f172a;
-      --card-bg: #1e293b;
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --primary: #38bdf8;
-      --accent: #818cf8;
-      --border: #334155;
+      --bg-primary: #0b0f19;
+      --bg-secondary: #111827;
+      --bg-card: rgba(17, 24, 39, 0.85);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(56, 189, 248, 0.4);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-cyan: #38bdf8;
+      --accent-indigo: #818cf8;
+      --accent-emerald: #34d399;
+      --accent-amber: #fbbf24;
+      --badge-bg: rgba(56, 189, 248, 0.08);
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
       line-height: 1.6;
-      padding: 2rem 1rem;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.07) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.07) 0px, transparent 50%);
+      background-attachment: fixed;
     }
-    .container { max-width: 900px; margin: 0 auto; }
-    header { text-align: center; margin-bottom: 3rem; }
-    h1 { font-size: 2.5rem; color: var(--text); margin-bottom: 0.5rem; }
-    .title { font-size: 1.25rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem; }
-    .contact-links a {
-      color: var(--muted);
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 15, 25, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 0;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.5rem;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
       text-decoration: none;
-      margin: 0 0.75rem;
-      transition: color 0.2s;
     }
-    .contact-links a:hover { color: var(--primary); }
-    section { margin-bottom: 2.5rem; }
-    h2 {
-      font-size: 1.5rem;
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 0.5rem;
+
+    .nav-logo span { color: var(--accent-cyan); }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: var(--accent-cyan); }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem 1.5rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 2.5rem 0 3.5rem 0;
+    }
+
+    .status-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(52, 211, 153, 0.1);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(52, 211, 153, 0.25);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
       margin-bottom: 1.25rem;
-      color: var(--primary);
     }
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.5rem;
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      background: var(--accent-emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent-emerald);
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5.5vw, 3.7rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -1.2px;
       margin-bottom: 1.25rem;
     }
-    .card h3 { font-size: 1.2rem; color: #fff; }
-    .card .subtitle { color: var(--accent); font-size: 0.95rem; margin-bottom: 0.75rem; }
-    ul { margin-left: 1.25rem; color: var(--muted); }
-    li { margin-bottom: 0.5rem; }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    .highlight {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-indigo));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .lead {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      max-width: 720px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
     }
-    .skill-category {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
       border-radius: 8px;
-      padding: 1rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
     }
-    .skill-category h4 { color: var(--accent); margin-bottom: 0.5rem; font-size: 1rem; }
-    .badge {
-      display: inline-block;
-      background: #0f172a;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 0.2rem 0.5rem;
+
+    .btn-primary {
+      background: var(--accent-cyan);
+      color: #04101e;
+    }
+
+    .btn-primary:hover {
+      background: #7dd3fc;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: var(--bg-secondary);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-2px);
+    }
+
+    /* Metrics */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin: 2.5rem 0;
+    }
+
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: 12px;
+    }
+
+    .metric-num {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: var(--accent-cyan);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .metric-desc {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    /* Headings */
+    section { padding: 4.5rem 0 1rem 0; }
+
+    .section-title {
+      font-size: 1.85rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-title::after {
+      content: "";
+      height: 1px;
+      flex-grow: 1;
+      background: var(--border-color);
+      margin-left: 1rem;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .skill-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+
+    .skill-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .tag {
+      background: var(--bg-secondary);
+      color: #cbd5e1;
+      border: 1px solid var(--border-color);
+      padding: 0.35rem 0.65rem;
+      border-radius: 6px;
       font-size: 0.8rem;
-      margin: 0.2rem;
-      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
     }
-    footer { text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 3rem; }
+
+    /* Manual QA Process Section */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .process-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    .process-step {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .process-card h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .process-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* Case Study / Project Cards */
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 2.2rem;
+      margin-bottom: 2rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--border-hover);
+    }
+
+    .project-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .project-meta {
+      color: var(--accent-indigo);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.98rem;
+    }
+
+    .qa-breakdown {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      background: rgba(11, 15, 25, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .qa-breakdown h4 {
+      font-size: 0.95rem;
+      color: var(--accent-cyan);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .bullets {
+      margin-left: 1.2rem;
+      color: #cbd5e1;
+    }
+
+    .bullets li {
+      margin-bottom: 0.45rem;
+      font-size: 0.9rem;
+    }
+
+    /* Certifications Grid */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .cert-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .cert-badge-icon {
+      font-size: 1.8rem;
+    }
+
+    .cert-info h4 {
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .cert-info p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Contact Box */
+    .contact-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .contact-box h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-box p {
+      color: var(--text-muted);
+      max-width: 550px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 2.5rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
   </style>
 </head>
 <body>
+
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="nav-logo">Saloni<span>.QA</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#process">Defect Strategy</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Case Studies</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
   <div class="container">
-    <header>
-      <h1>Saloni Bhatia</h1>
-      <div class="title">QA Engineer | Automation & Salesforce QA</div>
-      <div class="contact-links">
-        <span>Gurgaon, Haryana</span> •
-        <span>+91-6283726254</span> •
-        <a href="mailto:salonibhatia605@gmail.com">salonibhatia605@gmail.com</a> •
-        <a href="https://linkedin.com/in/saloni-bhatia-2a8879229" target="_blank">LinkedIn</a>
+
+    <!-- Hero Section -->
+    <header class="hero" id="about">
+      <div class="status-tag">
+        <span class="pulse"></span> Open to QA Engineer & Automation Roles
+      </div>
+      <h1>Saloni Bhatia.<br /><span class="highlight">QA Automation & Salesforce Specialist.</span></h1>
+      <p class="lead">
+        Bridging high-impact <strong>Manual Exploratory QA</strong> with resilient <strong>Test Automation Frameworks</strong>. Experienced in uncovering edge-case business logic bugs, validating Salesforce customer portals, and slashing regression cycles by 80%.
+      </p>
+      <div class="hero-actions">
+        <a href="mailto:salonibhatia605@gmail.com" class="btn btn-primary">Get In Touch</a>
+        <a href="https://linkedin.com/in/saloni-bhatia-2a8879229" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn Profile</a>
       </div>
     </header>
 
-    <section>
-      <h2>About Me</h2>
-      <p style="color: var(--muted);">
-        Results-oriented QA Engineer with 2+ years of experience in Salesforce QA, manual testing, and test automation for web and mobile applications. Proficient in building frameworks with Selenium WebDriver, Playwright, Java, and TestNG. Proven track record of reducing regression execution time by 80% through automation.
-      </p>
+    <!-- Key Metrics Section -->
+    <div class="metrics">
+      <div class="metric-card">
+        <div class="metric-num">80%</div>
+        <div class="metric-desc">Regression cycle reduction through Selenium & TestNG automation suites.</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">2+ Yrs</div>
+        <div class="metric-desc">Enterprise QA experience spanning Salesforce, Mobile Web, and API testing.</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">20+</div>
+        <div class="metric-desc">Modules tested across complex Salesforce & Siebel CRM customer journeys.</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">0-Leak</div>
+        <div class="metric-desc">Exploratory focus preventing critical access and workflow defects from hitting prod.</div>
+      </div>
+    </div>
+
+    <!-- Manual Testing Defect Strategy -->
+    <section id="process">
+      <h2 class="section-title">Defect Lifecycle & Manual Strategy</h2>
+      <p class="section-subtitle">How I investigate, document, and guarantee defect closure</p>
+
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="process-step">Step 01</div>
+          <h4>Exploratory & Edge Cases</h4>
+          <p>Go beyond happy paths to evaluate role-based access control (RBAC), interrupted customer journeys, and unexpected data behavior across boundary conditions.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-step">Step 02</div>
+          <h4>Evidence & Reproduction</h4>
+          <p>Isolate reproducibility parameters across environments. Document explicit steps, expected vs. actual behavior, console logs, test data, and screen captures.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-step">Step 03</div>
+          <h4>Triage & Collaboration</h4>
+          <p>Assign business-driven Severity & Priority in JIRA / Azure DevOps. Actively sync with developers and stakeholders during standups to accelerate root cause fixes.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-step">Step 04</div>
+          <h4>Verification & Regression</h4>
+          <p>Retest patched builds, conduct comprehensive side-effect impact analysis, and execute targeted regression tests before marking tickets ready for release.</p>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>Technical Skills</h2>
+    <!-- Technical Skills Section -->
+    <section id="skills">
+      <h2 class="section-title">Technical Expertise</h2>
+      <p class="section-subtitle">Core test automation stacks, testing frameworks, and tooling</p>
+
       <div class="skills-grid">
-        <div class="skill-category">
-          <h4>Automation & Testing</h4>
-          <span class="badge">Selenium WebDriver</span>
-          <span class="badge">Playwright</span>
-          <span class="badge">Java</span>
-          <span class="badge">TestNG</span>
-          <span class="badge">JUnit</span>
-          <span class="badge">Page Object Model (POM)</span>
+        
+        <div class="skill-card">
+          <h3>🔍 Manual & Functional QA</h3>
+          <div class="tag-container">
+            <span class="tag">Exploratory Testing</span>
+            <span class="tag">Salesforce CRM QA</span>
+            <span class="tag">Role-Based Access (RBAC)</span>
+            <span class="tag">Boundary Value Analysis</span>
+            <span class="tag">UAT & Smoke Testing</span>
+            <span class="tag">End-to-End User Journeys</span>
+          </div>
         </div>
-        <div class="skill-category">
-          <h4>API & Performance</h4>
-          <span class="badge">Postman</span>
-          <span class="badge">REST APIs</span>
-          <span class="badge">SQL Data Validation</span>
-          <span class="badge">Apache JMeter</span>
+
+        <div class="skill-card">
+          <h3>🚀 Test Automation Architecture</h3>
+          <div class="tag-container">
+            <span class="tag">Selenium WebDriver</span>
+            <span class="tag">Playwright</span>
+            <span class="tag">Java</span>
+            <span class="tag">Page Object Model (POM)</span>
+            <span class="tag">TestNG DataProviders</span>
+            <span class="tag">Listeners & Auto-Screenshots</span>
+            <span class="tag">Parallel Execution</span>
+            <span class="tag">Extent Reports</span>
+            <span class="tag">Maven</span>
+          </div>
         </div>
-        <div class="skill-category">
-          <h4>Tools & CI/CD</h4>
-          <span class="badge">Git / GitHub</span>
-          <span class="badge">GitHub Actions</span>
-          <span class="badge">Maven</span>
-          <span class="badge">JIRA</span>
-          <span class="badge">Agile / Scrum</span>
+
+        <div class="skill-card">
+          <h3>📱 Mobile & Cross-Browser</h3>
+          <div class="tag-container">
+            <span class="tag">Mobile Web Testing</span>
+            <span class="tag">Chrome & Safari QA</span>
+            <span class="tag">Screen Orientations</span>
+            <span class="tag">Session Persistence</span>
+            <span class="tag">Foreground / Background</span>
+            <span class="tag">Network Throttling (3G/Slow)</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>⚡ API & Performance Testing</h3>
+          <div class="tag-container">
+            <span class="tag">Postman</span>
+            <span class="tag">REST API Validation</span>
+            <span class="tag">JSON Payloads & Status</span>
+            <span class="tag">SQL Data Validation</span>
+            <span class="tag">Apache JMeter</span>
+            <span class="tag">Concurrent Load Testing</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>🛠️ Tools & CI/CD</h3>
+          <div class="tag-container">
+            <span class="tag">JIRA / Azure DevOps</span>
+            <span class="tag">Git / GitHub</span>
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">Agile / Scrum</span>
+            <span class="tag">AI-Assisted QA (Claude)</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Experience & Case Studies -->
+    <section id="experience">
+      <h2 class="section-title">Experience & Case Studies</h2>
+      <p class="section-subtitle">Real-world testing scenarios, framework design, and release ownership</p>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">FUSO Salesforce Customer Central Portal</div>
+          <div class="project-meta">Cubastion Consulting • Jan 2025 – Present</div>
+        </div>
+        <p class="project-desc">
+          Lead QA owner for the enterprise customer portal, driving quality across Salesforce CRM workflows, backend API integrations, and multi-device releases.
+        </p>
+
+        <div class="qa-breakdown">
+          <div>
+            <h4>🎯 Manual & Exploratory QA Highlights</h4>
+            <ul class="bullets">
+              <li>Uncovered critical access and permission leakages in <strong>Role-Based Access Control (RBAC)</strong> that bypassed standard test cases.</li>
+              <li>Tested end-to-end customer workflows: lead submissions, authentication, customer data validation, and third-party integration pipelines.</li>
+              <li>Evaluated mobile web experience across Chrome and Safari: validated viewport responsiveness, landscape/portrait switching, session retention, and recovery after network interruptions.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>⚙️ Automation Architecture (Selenium & Playwright)</h4>
+            <ul class="bullets">
+              <li>Engineered a maintainable <strong>Page Object Model (POM)</strong> test suite in Java and TestNG, slashing manual regression execution by <strong>80%</strong>.</li>
+              <li>Leveraged <strong>TestNG DataProviders</strong> for parameter-driven data testing across multiple customer persona datasets.</li>
+              <li>Integrated <strong>TestNG Listeners</strong> to automatically capture failure screenshots and generated rich interactive summaries with <strong>Extent Reports</strong>.</li>
+              <li>Executed automated tests in parallel via Maven and TestNG XML suites to speed up release turnarounds.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tag-container">
+          <span class="tag">Salesforce QA</span>
+          <span class="tag">Exploratory Testing</span>
+          <span class="tag">Selenium</span>
+          <span class="tag">Playwright</span>
+          <span class="tag">Java</span>
+          <span class="tag">TestNG DataProviders</span>
+          <span class="tag">Extent Reports</span>
+          <span class="tag">Postman</span>
+          <span class="tag">JMeter</span>
+          <span class="tag">SQL</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">Enterprise CRM Functional & Workflow QA</div>
+          <div class="project-meta">Cubastion Consulting • Jan 2024 – Jan 2025</div>
+        </div>
+        <p class="project-desc">
+          Executed functional, smoke, and regression test suites across 20+ core business modules on Salesforce and Siebel CRM platforms.
+        </p>
+        <ul class="bullets">
+          <li>Authored high-coverage test cases and defect replication steps directly aligned with enterprise customer acceptance criteria.</li>
+          <li>Investigated backend transaction validity and data integrity using targeted <strong>SQL queries</strong>.</li>
+          <li>Performed concurrent load simulations using <strong>Apache JMeter</strong> to gauge system response times under peak user concurrency.</li>
+          <li>Triaged defects daily in JIRA, participating in sprint reviews and release sign-offs.</li>
+        </ul>
+        <div class="tag-container">
+          <span class="tag">Manual QA</span>
+          <span class="tag">Salesforce</span>
+          <span class="tag">Siebel CRM</span>
+          <span class="tag">SQL Validation</span>
+          <span class="tag">JMeter</span>
+          <span class="tag">JIRA</span>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2>Featured QA Projects & Experience</h2>
-      <div class="card">
-        <h3>FUSO Salesforce Customer Central Portal</h3>
-        <div class="subtitle">Cubastion Consulting | Jan 2025 – Present</div>
-        <ul>
-          <li>Owned end-to-end QA activities including test planning, defect triage, and release validation for an enterprise Salesforce portal.</li>
-          <li>Developed and maintained automated regression suites using <strong>Selenium WebDriver, Playwright, Java, and TestNG</strong>, cutting regression time by 80%.</li>
-          <li>Executed API validation via <strong>Postman</strong> and verified business data integrity using <strong>SQL</strong> queries.</li>
-          <li>Conducted concurrent user load and latency testing using <strong>Apache JMeter</strong>.</li>
-        </ul>
-      </div>
+    <!-- Certifications Section -->
+    <section id="certifications">
+      <h2 class="section-title">Certifications & Education</h2>
+      <p class="section-subtitle">Verified credentials and academic background</p>
 
-      <div class="card">
-        <h3>CRM Workflow & Functional Validation</h3>
-        <div class="subtitle">Cubastion Consulting | Jan 2024 – Jan 2025</div>
-        <ul>
-          <li>Performed manual functional, UI, and workflow testing across 20+ modules on Salesforce and Siebel CRM platforms.</li>
-          <li>Authored comprehensive test scenarios, smoke checklists, and regression suites mapped to client specifications.</li>
-        </ul>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-badge-icon">🤖</div>
+          <div class="cert-info">
+            <h4>Salesforce Certified AI Specialist</h4>
+            <p>Salesforce Official Credential</p>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-badge-icon">⚡</div>
+          <div class="cert-info">
+            <h4>Salesforce Certified AI Associate</h4>
+            <p>Salesforce Official Credential</p>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-badge-icon">☕</div>
+          <div class="cert-info">
+            <h4>Selenium WebDriver with Java</h4>
+            <p>Udemy Certification</p>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-badge-icon">🎓</div>
+          <div class="cert-info">
+            <h4>B.Tech in Computer Science</h4>
+            <p>Chandigarh Group of Colleges (CGPA: 8.29)</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Certifications</h2>
-      <div class="card">
-        <ul>
-          <li>Salesforce Certified AI Specialist</li>
-          <li>Salesforce Certified AI Associate</li>
-          <li>Selenium WebDriver with Java (Udemy)</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>Education</h2>
-      <div class="card">
-        <h3>B.Tech in Computer Science Engineering</h3>
-        <div class="subtitle">Chandigarh Group of Colleges (2020 – 2024) | CGPA: 8.29</div>
+    <!-- Contact Box -->
+    <section id="contact">
+      <div class="contact-box">
+        <h2>Let's Discuss Quality Engineering</h2>
+        <p>I am available for QA Engineering and Automation roles. Let's discuss how my exploratory eye and automation frameworks can protect your product releases.</p>
+        <div class="hero-actions" style="justify-content: center;">
+          <a href="mailto:salonibhatia605@gmail.com" class="btn btn-primary">salonibhatia605@gmail.com</a>
+          <a href="https://linkedin.com/in/saloni-bhatia-2a8879229" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn Profile</a>
+        </div>
       </div>
     </section>
 
     <footer>
-      <p>© Saloni Bhatia. Hosted on GitHub Pages.</p>
+      <p>© Saloni Bhatia • QA Engineer </p>
     </footer>
+
   </div>
+
 </body>
 </html>
