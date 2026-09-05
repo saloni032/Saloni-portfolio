@@ -4,146 +4,155 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Saloni Bhatia | QA Engineer & Test Automation Specialist</title>
+  <meta name="description" content="Portfolio of Saloni Bhatia - QA Engineer specializing in Salesforce Testing, Client UAT Demos, Manual Exploratory QA, Automation Frameworks, and Release Validation." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
   <style>
     :root {
-      --bg: #090d16;
-      --sidebar-bg: #0f1626;
-      --card-bg: rgba(18, 26, 43, 0.7);
-      --border: rgba(255, 255, 255, 0.08);
-      --border-accent: #38bdf8;
-      --text: #f1f5f9;
-      --muted: #94a3b8;
-      --cyan: #38bdf8;
-      --emerald: #34d399;
-      --indigo: #818cf8;
+      --bg-primary: #0b0f19;
+      --bg-secondary: #111827;
+      --bg-card: rgba(17, 24, 39, 0.85);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(56, 189, 248, 0.4);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-cyan: #38bdf8;
+      --accent-indigo: #818cf8;
+      --accent-emerald: #34d399;
+      --accent-amber: #fbbf24;
+      --badge-bg: rgba(56, 189, 248, 0.08);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Space Grotesk', -apple-system, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
       line-height: 1.6;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.07) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.07) 0px, transparent 50%);
+      background-attachment: fixed;
     }
 
-    .layout-wrapper {
-      display: flex;
-      min-height: 100vh;
-    }
-
-    /* Left Sticky Sidebar */
-    .sidebar {
-      width: 38%;
-      max-width: 440px;
-      height: 100vh;
+    nav {
       position: sticky;
       top: 0;
-      background: var(--sidebar-bg);
-      border-right: 1px solid var(--border);
-      padding: 3.5rem 2.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      z-index: 100;
+      background: rgba(11, 15, 25, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 0;
     }
 
-    .badge-status {
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.5rem;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--accent-cyan); }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: var(--accent-cyan); }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem 1.5rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 2.5rem 0 3.5rem 0;
+    }
+
+    .status-tag {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       background: rgba(52, 211, 153, 0.1);
-      color: var(--emerald);
+      color: var(--accent-emerald);
       border: 1px solid rgba(52, 211, 153, 0.25);
       padding: 0.35rem 0.85rem;
       border-radius: 999px;
       font-size: 0.8rem;
       font-weight: 600;
-      margin-bottom: 1.5rem;
-    }
-
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      background: var(--emerald);
-      border-radius: 50%;
-      box-shadow: 0 0 8px var(--emerald);
-    }
-
-    .sidebar h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -1px;
-      margin-bottom: 0.5rem;
-    }
-
-    .sidebar-role {
-      font-size: 1.15rem;
-      color: var(--cyan);
-      font-weight: 600;
       margin-bottom: 1.25rem;
-      letter-spacing: -0.3px;
     }
 
-    .sidebar-bio {
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
+    .pulse {
+      width: 8px;
+      height: 8px;
+      background: var(--accent-emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent-emerald);
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5.5vw, 3.7rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -1.2px;
+      margin-bottom: 1.25rem;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-indigo));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .lead {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      max-width: 760px;
       margin-bottom: 2rem;
     }
 
-    .nav-list {
-      list-style: none;
+    .hero-actions {
       display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .nav-list a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      transition: all 0.2s ease;
-    }
-
-    .nav-list a:hover {
-      color: var(--cyan);
-      transform: translateX(4px);
-    }
-
-    .sidebar-footer {
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .contact-cta {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      padding: 0.75rem 1.25rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
       font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 8px;
       text-decoration: none;
       transition: all 0.2s ease;
     }
 
     .btn-primary {
-      background: var(--cyan);
+      background: var(--accent-cyan);
       color: #04101e;
     }
 
@@ -153,464 +162,574 @@
     }
 
     .btn-secondary {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
+      background: var(--bg-secondary);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
     }
 
     .btn-secondary:hover {
-      border-color: var(--cyan);
-      color: var(--cyan);
+      border-color: var(--accent-cyan);
       transform: translateY(-2px);
     }
 
-    /* Right Scrollable Content */
-    .main-content {
-      width: 62%;
-      flex-grow: 1;
-      padding: 4rem 3.5rem;
-      max-width: 850px;
-    }
-
-    .stats-row {
+    /* Metrics */
+    .metrics {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 1rem;
-      margin-bottom: 4rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin: 2.5rem 0;
     }
 
-    .stat-pill {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.25rem;
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: 12px;
     }
 
-    .stat-val {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: var(--cyan);
+    .metric-num {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: var(--accent-cyan);
       line-height: 1;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.4rem;
+      font-family: 'JetBrains Mono', monospace;
     }
 
-    .stat-label {
-      font-size: 0.8rem;
-      color: var(--muted);
-      line-height: 1.3;
+    .metric-desc {
+      color: var(--text-muted);
+      font-size: 0.88rem;
     }
 
-    section {
-      margin-bottom: 4rem;
-    }
+    /* Headings */
+    section { padding: 4.5rem 0 1rem 0; }
 
-    .section-heading {
-      font-size: 1.35rem;
+    .section-title {
+      font-size: 1.85rem;
       font-weight: 700;
       letter-spacing: -0.5px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
       gap: 0.75rem;
     }
 
-    .section-heading::after {
+    .section-title::after {
       content: "";
       height: 1px;
       flex-grow: 1;
-      background: var(--border);
+      background: var(--border-color);
+      margin-left: 1rem;
     }
 
-    /* Defect Protocol Timeline */
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    .timeline-node {
-      background: var(--card-bg);
-      border-left: 3px solid var(--cyan);
-      border-top: 1px solid var(--border);
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      border-radius: 0 10px 10px 0;
-      padding: 1.25rem 1.5rem;
-    }
-
-    .timeline-step {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--cyan);
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-bottom: 0.35rem;
-    }
-
-    .timeline-node h3 {
-      font-size: 1rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .timeline-node p {
-      font-size: 0.88rem;
-      color: var(--muted);
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
     }
 
     /* Skills Grid */
-    .skills-cluster {
+    .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.25rem;
     }
 
-    .cluster-box {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.25rem;
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.2s ease;
     }
 
-    .cluster-box h4 {
-      font-size: 0.95rem;
-      color: var(--text);
-      margin-bottom: 0.85rem;
+    .skill-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+
+    .skill-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
 
-    .chips {
+    .tag-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
+      gap: 0.45rem;
     }
 
-    .chip {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border);
+    .tag {
+      background: var(--bg-secondary);
       color: #cbd5e1;
-      padding: 0.3rem 0.6rem;
+      border: 1px solid var(--border-color);
+      padding: 0.35rem 0.65rem;
       border-radius: 6px;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-family: 'JetBrains Mono', monospace;
     }
 
-    /* Case Studies */
-    .case-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
+    /* Manual QA Process Section */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .process-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
       border-radius: 12px;
-      padding: 1.75rem;
-      margin-bottom: 1.75rem;
-      transition: border-color 0.2s ease;
+      padding: 1.5rem;
+      position: relative;
     }
 
-    .case-card:hover {
-      border-color: rgba(56, 189, 248, 0.35);
+    .process-step {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .case-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
+    .process-card h4 {
+      font-size: 1.05rem;
       margin-bottom: 0.5rem;
     }
 
-    .case-top h3 {
-      font-size: 1.2rem;
-      color: var(--text);
+    .process-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
     }
 
-    .case-time {
-      font-size: 0.85rem;
-      color: var(--indigo);
-      font-weight: 500;
-      font-family: 'JetBrains Mono', monospace;
+    /* Case Study / Project Cards */
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 2.2rem;
+      margin-bottom: 2rem;
+      transition: border-color 0.2s ease;
     }
 
-    .case-summary {
-      font-size: 0.92rem;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
+    .project-card:hover {
+      border-color: var(--border-hover);
     }
 
-    .case-points {
+    .project-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .project-meta {
+      color: var(--accent-indigo);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.98rem;
+    }
+
+    .qa-breakdown {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      background: rgba(11, 15, 25, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .qa-breakdown h4 {
+      font-size: 0.95rem;
+      color: var(--accent-cyan);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .bullets {
       margin-left: 1.2rem;
-      margin-bottom: 1.25rem;
       color: #cbd5e1;
+    }
+
+    .bullets li {
+      margin-bottom: 0.45rem;
       font-size: 0.9rem;
     }
 
-    .case-points li {
-      margin-bottom: 0.45rem;
+    /* Certifications Grid */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
     }
 
-    /* Credentials */
-    .cred-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    .cert-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
       gap: 1rem;
     }
 
-    .cred-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
+    .cert-badge-icon {
+      font-size: 1.8rem;
     }
 
-    .cred-card span { font-size: 1.5rem; }
-    .cred-card h4 { font-size: 0.9rem; color: var(--text); }
-    .cred-card p { font-size: 0.78rem; color: var(--muted); }
+    .cert-info h4 {
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
 
-    /* Responsive adjustments */
-    @media (max-width: 900px) {
-      .layout-wrapper { flex-direction: column; }
-      .sidebar {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        position: relative;
-        padding: 2.5rem 1.5rem;
-      }
-      .nav-list { display: none; }
-      .main-content {
-        width: 100%;
-        max-width: 100%;
-        padding: 2.5rem 1.5rem;
-      }
+    .cert-info p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Contact Box */
+    .contact-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .contact-box h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-box p {
+      color: var(--text-muted);
+      max-width: 550px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 2.5rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
     }
   </style>
 </head>
 <body>
 
-  <div class="layout-wrapper">
-    
-    <!-- Sticky Desktop Sidebar -->
-    <aside class="sidebar">
-      <div>
-        <div class="badge-status">
-          <span class="status-dot"></span> Open to QA & Automation Roles
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="nav-logo">Saloni<span>.QA</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#process">Defect Strategy</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Case Studies</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- Hero Section -->
+    <header class="hero" id="about">
+      <div class="status-tag">
+        <span class="pulse"></span> Open to QA Engineer & Automation Roles
+      </div>
+      <h1>Saloni Bhatia<br /><span class="highlight">QA Engineer</span></h1>
+      <p class="lead">
+        Bridging high-impact <strong>Manual Exploratory QA</strong> with resilient <strong>Test Automation Frameworks</strong>. Experienced in uncovering edge-case business logic bugs, driving independent client UAT demos, owning production release sign-offs, and slashing regression cycles by 80%.
+      </p>
+      <div class="hero-actions">
+        <a href="mailto:salonibhatia605@gmail.com" class="btn btn-primary">Get In Touch</a>
+        <a href="https://linkedin.com/in/saloni-bhatia-2a8879229" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn Profile</a>
+      </div>
+    </header>
+
+    <!-- Key Metrics Section -->
+    <div class="metrics">
+      <div class="metric-card">
+        <div class="metric-num">80%</div>
+        <div class="metric-desc">Regression cycle reduction through Selenium & TestNG automation suites.</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">2+ Yrs</div>
+        <div class="metric-desc">Enterprise QA experience spanning Salesforce, Mobile Web, and API testing.</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">20+</div>
+        <div class="metric-desc">Modules tested across complex Salesforce CRM customer journeys.</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">UAT</div>
+        <div class="metric-desc">Independently facilitated client walkthroughs, requirement demos, and release approvals.</div>
+      </div>
+    </div>
+
+    <!-- Manual Testing Defect Strategy -->
+    <section id="process">
+      <h2 class="section-title">Defect Lifecycle & Release Strategy</h2>
+      <p class="section-subtitle">How I investigate, document, and guarantee production-ready releases</p>
+
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="process-step">Step 01</div>
+          <h4>Exploratory & Edge Cases</h4>
+          <p>Go beyond happy paths to evaluate role-based access control (RBAC), interrupted customer journeys, and unexpected data behavior across boundary conditions.</p>
         </div>
-        <h1>Saloni Bhatia</h1>
-        <div class="sidebar-role">QA Engineer & Test Specialist</div>
-        <p class="sidebar-bio">
-          Bridging high-impact manual exploratory testing with scalable test automation frameworks. Specialized in Salesforce customer portals, independent client UAT demos, and release validation.
+
+        <div class="process-card">
+          <div class="process-step">Step 02</div>
+          <h4>Evidence & Reproduction</h4>
+          <p>Isolate reproducibility parameters across environments. Document explicit steps, expected vs. actual behavior, console logs, test data, and screen captures.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-step">Step 03</div>
+          <h4>Triage & Collaboration</h4>
+          <p>Assign business-driven Severity & Priority in JIRA. Actively sync with developers and stakeholders during standups to accelerate root cause fixes.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-step">Step 04</div>
+          <h4>UAT & Release Validation</h4>
+          <p>Lead independent UAT demos with client stakeholders, perform targeted regression sweeps on patched builds, and provide final quality sign-off before deployment.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills">
+      <h2 class="section-title">Technical Expertise</h2>
+      <p class="section-subtitle">Core test automation stacks, testing frameworks, and tooling</p>
+
+      <div class="skills-grid">
+        
+        <div class="skill-card">
+          <h3>🔍 Manual & Functional QA</h3>
+          <div class="tag-container">
+            <span class="tag">Exploratory Testing</span>
+            <span class="tag">Client UAT Demos</span>
+            <span class="tag">Release Validation</span>
+            <span class="tag">Salesforce CRM QA</span>
+            <span class="tag">Role-Based Access (RBAC)</span>
+            <span class="tag">Boundary Value Analysis</span>
+            <span class="tag">Smoke & Sanity</span>
+            <span class="tag">End-to-End User Journeys</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>🚀 Test Automation Architecture</h3>
+          <div class="tag-container">
+            <span class="tag">Selenium WebDriver</span>
+            <span class="tag">Playwright</span>
+            <span class="tag">Java</span>
+            <span class="tag">Page Object Model (POM)</span>
+            <span class="tag">TestNG DataProviders</span>
+            <span class="tag">Listeners & Auto-Screenshots</span>
+            <span class="tag">Parallel Execution</span>
+            <span class="tag">Extent Reports</span>
+            <span class="tag">Maven</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>📱 Mobile & Cross-Browser</h3>
+          <div class="tag-container">
+            <span class="tag">Mobile Web Testing</span>
+            <span class="tag">Chrome & Safari QA</span>
+            <span class="tag">Screen Orientations</span>
+            <span class="tag">Session Persistence</span>
+            <span class="tag">Foreground / Background</span>
+            <span class="tag">Network Throttling (3G/Slow)</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>⚡ API & Performance Testing</h3>
+          <div class="tag-container">
+            <span class="tag">Postman</span>
+            <span class="tag">REST API Validation</span>
+            <span class="tag">JSON Payloads & Status</span>
+            <span class="tag">SQL Data Validation</span>
+            <span class="tag">Apache JMeter</span>
+            <span class="tag">Concurrent Load Testing</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>🛠️ Tools & CI/CD</h3>
+          <div class="tag-container">
+            <span class="tag">JIRA</span>
+            <span class="tag">Git / GitHub</span>
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">Agile / Scrum</span>
+            <span class="tag">Sprint Planning</span>
+            <span class="tag">AI-Assisted QA (Claude)</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Experience & Case Studies -->
+    <section id="experience">
+      <h2 class="section-title">Experience & Case Studies</h2>
+      <p class="section-subtitle">Real-world testing scenarios, framework design, and release ownership</p>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">FUSO Salesforce Customer Central Portal</div>
+          <div class="project-meta">Cubastion Consulting • Jan 2025 – Present</div>
+        </div>
+        <p class="project-desc">
+          Lead QA owner for the enterprise customer portal, driving quality across Salesforce CRM workflows, backend API integrations, client demonstrations, and scheduled production releases.
         </p>
 
-        <ul class="nav-list">
-          <li><a href="#stats">01 // Key Impact</a></li>
-          <li><a href="#process">02 // Defect & UAT Strategy</a></li>
-          <li><a href="#skills">03 // Technical Arsenal</a></li>
-          <li><a href="#cases">04 // Enterprise Experience</a></li>
-          <li><a href="#credentials">05 // Credentials</a></li>
-        </ul>
+        <div class="qa-breakdown">
+          <div>
+            <h4>🎯 Manual QA, UAT & Release Ownership</h4>
+            <ul class="bullets">
+              <li><strong>Client UAT Leadership:</strong> Independently organized and conducted live User Acceptance Testing (UAT) demos directly with enterprise client stakeholders, capturing feedback and validating edge workflows.</li>
+              <li><strong>Release Sign-Off:</strong> Managed end-to-end release checkout checklists, performing pre- and post-deployment smoke tests and defect triage to greenlight production go-lives.</li>
+              <li><strong>RBAC & Exploratory Testing:</strong> Uncovered critical permission and data leakage bugs in Role-Based Access Control (RBAC) that bypassed scripted test suites.</li>
+              <li><strong>Mobile Web Quality:</strong> Validated responsive UI, screen rotations, session retention, and recovery after 3G/network drops across Chrome and Safari mobile viewports.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>⚙️ Automation Architecture (Selenium & Playwright)</h4>
+            <ul class="bullets">
+              <li>Engineered a maintainable <strong>Page Object Model (POM)</strong> test suite in Java and TestNG, slashing manual regression execution time by <strong>80%</strong>.</li>
+              <li>Leveraged <strong>TestNG DataProviders</strong> for parameter-driven data testing across multiple customer persona datasets.</li>
+              <li>Integrated <strong>TestNG Listeners</strong> to automatically capture failure screenshots and generated rich interactive summaries with <strong>Extent Reports</strong>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tag-container">
+          <span class="tag">Client UAT</span>
+          <span class="tag">Release Validation</span>
+          <span class="tag">Salesforce QA</span>
+          <span class="tag">Exploratory Testing</span>
+          <span class="tag">Selenium</span>
+          <span class="tag">Playwright</span>
+          <span class="tag">Java</span>
+          <span class="tag">TestNG DataProviders</span>
+          <span class="tag">Extent Reports</span>
+          <span class="tag">Postman</span>
+          <span class="tag">JMeter</span>
+          <span class="tag">SQL</span>
+        </div>
       </div>
 
-      <div class="sidebar-footer">
-        <div class="contact-cta">
-          <a href="mailto:salonibhatia605@gmail.com" class="btn btn-primary">Get in Touch</a>
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">Enterprise CRM Functional & Workflow QA</div>
+          <div class="project-meta">Cubastion Consulting • Jan 2024 – Jan 2025</div>
+        </div>
+        <p class="project-desc">
+          Executed functional, smoke, and regression test suites across 20+ core business modules on Salesforce CRM platforms.
+        </p>
+        <ul class="bullets">
+          <li>Authored high-coverage test cases and defect replication steps directly aligned with enterprise customer acceptance criteria.</li>
+          <li>Investigated backend transaction validity and data integrity using targeted <strong>SQL queries</strong>.</li>
+          <li>Performed concurrent load simulations using <strong>Apache JMeter</strong> to gauge system response times under peak user concurrency.</li>
+          <li>Triaged defects daily in JIRA, participating in sprint reviews, defect triage, and release sign-offs.</li>
+        </ul>
+        <div class="tag-container">
+          <span class="tag">Manual QA</span>
+          <span class="tag">Salesforce</span>
+          <span class="tag">SQL Validation</span>
+          <span class="tag">JMeter</span>
+          <span class="tag">JIRA</span>
+          <span class="tag">Agile Scrum</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+      <h2 class="section-title">Certifications & Education</h2>
+      <p class="section-subtitle">Verified credentials and academic background</p>
+
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-badge-icon">🤖</div>
+          <div class="cert-info">
+            <h4>Salesforce Certified AI Specialist</h4>
+            <p>Salesforce Official Credential</p>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-badge-icon">⚡</div>
+          <div class="cert-info">
+            <h4>Salesforce Certified AI Associate</h4>
+            <p>Salesforce Official Credential</p>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-badge-icon">☕</div>
+          <div class="cert-info">
+            <h4>Selenium WebDriver with Java</h4>
+            <p>Udemy Certification</p>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-badge-icon">🎓</div>
+          <div class="cert-info">
+            <h4>B.Tech in Computer Science</h4>
+            <p>Chandigarh Group of Colleges (CGPA: 8.29)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Box -->
+    <section id="contact">
+      <div class="contact-box">
+        <h2>Let's Discuss Quality Engineering</h2>
+        <p>I am available for QA Engineering and Automation roles. Let's discuss how my exploratory eye, client-facing UAT leadership, and automation frameworks can protect your product releases.</p>
+        <div class="hero-actions" style="justify-content: center;">
+          <a href="mailto:salonibhatia605@gmail.com" class="btn btn-primary">salonibhatia605@gmail.com</a>
           <a href="https://linkedin.com/in/saloni-bhatia-2a8879229" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn Profile</a>
         </div>
       </div>
-    </aside>
+    </section>
 
-    <!-- Scrollable Detail Stream -->
-    <main class="main-content">
-      
-      <!-- Metrics Section -->
-      <section id="stats">
-        <div class="stats-row">
-          <div class="stat-pill">
-            <div class="stat-val">80%</div>
-            <div class="stat-label">Manual regression reduction via automation suites[cite: 1].</div>
-          </div>
-          <div class="stat-pill">
-            <div class="stat-val">2+ Yrs</div>
-            <div class="stat-label">Experience across Salesforce QA, APIs & Mobile Web[cite: 1].</div>
-          </div>
-          <div class="stat-pill">
-            <div class="stat-val">Client UAT</div>
-            <div class="stat-label">Led walkthroughs, demos & release approvals.</div>
-          </div>
-          <div class="stat-pill">
-            <div class="stat-val">20+</div>
-            <div class="stat-label">Core modules validated on enterprise CRM platforms[cite: 1].</div>
-          </div>
-        </div>
-      </section>
+    <footer>
+      <p>© Saloni Bhatia • QA Engineer </p>
+    </footer>
 
-      <!-- Defect Strategy Section -->
-      <section id="process">
-        <h2 class="section-heading">Defect & Release Strategy</h2>
-        <div class="timeline">
-          <div class="timeline-node">
-            <div class="timeline-step">Phase 01</div>
-            <h3>Exploratory Testing & Edge Cases</h3>
-            <p>Target role-based permissions (RBAC), edge customer journeys, session longevity, and complex business logic scenarios that evade standard happy path suites.</p>
-          </div>
-          <div class="timeline-node">
-            <div class="timeline-step">Phase 02</div>
-            <h3>Replication, Artifacts & Triage</h3>
-            <p>Isolate environments, verify reproduction parameters, and document tickets with actionable logs, payloads, and step-by-step videos in JIRA[cite: 1].</p>
-          </div>
-          <div class="timeline-node">
-            <div class="timeline-step">Phase 03</div>
-            <h3>Client UAT Demonstrations</h3>
-            <p>Organize and conduct live acceptance testing demos directly with client stakeholders, validating business rules and closing expectation gaps before build finalization.</p>
-          </div>
-          <div class="timeline-node">
-            <div class="timeline-step">Phase 04</div>
-            <h3>Release Sign-Off & Regressions</h3>
-            <p>Execute targeted regression suites on patched branches, run pre/post deployment smoke checklists, and provide final quality sign-off for production deployments[cite: 1].</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills Section -->
-      <section id="skills">
-        <h2 class="section-heading">Technical Arsenal</h2>
-        <div class="skills-cluster">
-          
-          <div class="cluster-box">
-            <h4>🔍 Manual QA & Strategy</h4>
-            <div class="chips">
-              <span class="chip">Exploratory Testing</span>
-              <span class="chip">Client UAT Demos</span>
-              <span class="chip">Salesforce QA</span>
-              <span class="chip">RBAC Security</span>
-              <span class="chip">Smoke & Regression</span>
-              <span class="chip">Release Validation</span>
-            </div>
-          </div>
-
-          <div class="cluster-box">
-            <h4>⚙️ Automation Engineering</h4>
-            <div class="chips">
-              <span class="chip">Selenium WebDriver</span>
-              <span class="chip">Playwright</span>
-              <span class="chip">Java</span>
-              <span class="chip">Page Object Model</span>
-              <span class="chip">TestNG DataProviders</span>
-              <span class="chip">Extent Reports</span>
-              <span class="chip">Maven</span>
-            </div>
-          </div>
-
-          <div class="cluster-box">
-            <h4>📱 Mobile & Cross-Browser</h4>
-            <div class="chips">
-              <span class="chip">Mobile Chrome & Safari</span>
-              <span class="chip">Screen Orientations</span>
-              <span class="chip">Session Persistence</span>
-              <span class="chip">Network Throttling</span>
-              <span class="chip">Viewport Testing</span>
-            </div>
-          </div>
-
-          <div class="cluster-box">
-            <h4>⚡ API & Performance</h4>
-            <div class="chips">
-              <span class="chip">Postman</span>
-              <span class="chip">REST Endpoints</span>
-              <span class="chip">JSON Schema</span>
-              <span class="chip">SQL Data Validation</span>
-              <span class="chip">Apache JMeter</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- Experience Section -->
-      <section id="cases">
-        <h2 class="section-heading">Enterprise Experience</h2>
-
-        <div class="case-card">
-          <div class="case-top">
-            <h3>FUSO Salesforce Customer Central Portal</h3>
-            <span class="case-time">Jan 2025 – Present</span>
-          </div>
-          <div class="case-summary">Associate Consultant | Cubastion Consulting[cite: 1]</div>
-          <ul class="case-points">
-            <li><strong>Client UAT Leadership:</strong> Independently facilitated live acceptance testing walkthroughs with client teams, demoing edge features and resolving functional inquiries prior to release.</li>
-            <li><strong>Framework Automation:</strong> Developed and maintained an automated <strong>Page Object Model (POM)</strong> suite utilizing Selenium, Playwright, Java, and TestNG, decreasing regression overhead by <strong>80%</strong>[cite: 1].</li>
-            <li><strong>Exploratory & RBAC QA:</strong> Surfaced critical permission boundary defects in customer access controls before reaching staging environments.</li>
-            <li><strong>API & Database Testing:</strong> Validated transaction accuracy via <strong>Postman</strong> REST calls and verified schema integrity using targeted <strong>SQL queries</strong>[cite: 1].</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">Salesforce</span>
-            <span class="chip">Client Demos</span>
-            <span class="chip">Selenium</span>
-            <span class="chip">Playwright</span>
-            <span class="chip">TestNG</span>
-            <span class="chip">JMeter</span>
-          </div>
-        </div>
-
-        <div class="case-card">
-          <div class="case-top">
-            <h3>Enterprise CRM Functional QA</h3>
-            <span class="case-time">Jan 2024 – Jan 2025</span>
-          </div>
-          <div class="case-summary">Graduate Trainee Engineer & Intern | Cubastion Consulting[cite: 1]</div>
-          <ul class="case-points">
-            <li>Executed functional, integration, smoke, and regression suites across 20+ modules on Salesforce CRM[cite: 1].</li>
-            <li>Conducted load and concurrency benchmarks using <strong>Apache JMeter</strong> to surface system latency during high-traffic intervals[cite: 1].</li>
-            <li>Managed defect lifecycles, bug triage, and regression sign-offs in <strong>JIRA</strong> following Agile Scrum routines[cite: 1].</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">Manual QA</span>
-            <span class="chip">SQL</span>
-            <span class="chip">JMeter</span>
-            <span class="chip">JIRA</span>
-          </div>
-        </div>
-
-      </section>
-
-      <!-- Credentials Section -->
-      <section id="credentials">
-        <h2 class="section-heading">Credentials & Education</h2>
-        <div class="cred-list">
-          <div class="cred-card">
-            <span>🤖</span>
-            <div>
-              <h4>Salesforce Certified AI Specialist</h4>
-              <p>Salesforce Official Credential[cite: 1]</p>
-            </div>
-          </div>
-          <div class="cred-card">
-            <span>⚡</span>
-            <div>
-              <h4>Salesforce Certified AI Associate</h4>
-              <p>Salesforce Official Credential[cite: 1]</p>
-            </div>
-          </div>
-          <div class="cred-card">
-            <span>☕</span>
-            <div>
-              <h4>Selenium WebDriver with Java</h4>
-              <p>Udemy Certification[cite: 1]</p>
-            </div>
-          </div>
-          <div class="cred-card">
-            <span>🎓</span>
-            <div>
-              <h4>B.Tech in Computer Science</h4>
-              <p>Chandigarh Group of Colleges (CGPA: 8.29)[cite: 1]</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </main>
   </div>
 
 </body>
