@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saloni Bhatia | QA Engineer Portfolio</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --primary: #38bdf8;
+      --accent: #818cf8;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 900px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 3rem; }
+    h1 { font-size: 2.5rem; color: var(--text); margin-bottom: 0.5rem; }
+    .title { font-size: 1.25rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem; }
+    .contact-links a {
+      color: var(--muted);
+      text-decoration: none;
+      margin: 0 0.75rem;
+      transition: color 0.2s;
+    }
+    .contact-links a:hover { color: var(--primary); }
+    section { margin-bottom: 2.5rem; }
+    h2 {
+      font-size: 1.5rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.25rem;
+      color: var(--primary);
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .card h3 { font-size: 1.2rem; color: #fff; }
+    .card .subtitle { color: var(--accent); font-size: 0.95rem; margin-bottom: 0.75rem; }
+    ul { margin-left: 1.25rem; color: var(--muted); }
+    li { margin-bottom: 0.5rem; }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .skill-category {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .skill-category h4 { color: var(--accent); margin-bottom: 0.5rem; font-size: 1rem; }
+    .badge {
+      display: inline-block;
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.2rem 0.5rem;
+      font-size: 0.8rem;
+      margin: 0.2rem;
+      color: var(--text);
+    }
+    footer { text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Saloni Bhatia</h1>
+      <div class="title">QA Engineer | Automation & Salesforce QA</div>
+      <div class="contact-links">
+        <span>Gurgaon, Haryana</span> •
+        <span>+91-6283726254</span> •
+        <a href="mailto:salonibhatia605@gmail.com">salonibhatia605@gmail.com</a> •
+        <a href="https://linkedin.com/in/saloni-bhatia-2a8879229" target="_blank">LinkedIn</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>About Me</h2>
+      <p style="color: var(--muted);">
+        Results-oriented QA Engineer with 2+ years of experience in Salesforce QA, manual testing, and test automation for web and mobile applications. Proficient in building frameworks with Selenium WebDriver, Playwright, Java, and TestNG. Proven track record of reducing regression execution time by 80% through automation.
+      </p>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Automation & Testing</h4>
+          <span class="badge">Selenium WebDriver</span>
+          <span class="badge">Playwright</span>
+          <span class="badge">Java</span>
+          <span class="badge">TestNG</span>
+          <span class="badge">JUnit</span>
+          <span class="badge">Page Object Model (POM)</span>
+        </div>
+        <div class="skill-category">
+          <h4>API & Performance</h4>
+          <span class="badge">Postman</span>
+          <span class="badge">REST APIs</span>
+          <span class="badge">SQL Data Validation</span>
+          <span class="badge">Apache JMeter</span>
+        </div>
+        <div class="skill-category">
+          <h4>Tools & CI/CD</h4>
+          <span class="badge">Git / GitHub</span>
+          <span class="badge">GitHub Actions</span>
+          <span class="badge">Maven</span>
+          <span class="badge">JIRA</span>
+          <span class="badge">Agile / Scrum</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Featured QA Projects & Experience</h2>
+      <div class="card">
+        <h3>FUSO Salesforce Customer Central Portal</h3>
+        <div class="subtitle">Cubastion Consulting | Jan 2025 – Present</div>
+        <ul>
+          <li>Owned end-to-end QA activities including test planning, defect triage, and release validation for an enterprise Salesforce portal.</li>
+          <li>Developed and maintained automated regression suites using <strong>Selenium WebDriver, Playwright, Java, and TestNG</strong>, cutting regression time by 80%.</li>
+          <li>Executed API validation via <strong>Postman</strong> and verified business data integrity using <strong>SQL</strong> queries.</li>
+          <li>Conducted concurrent user load and latency testing using <strong>Apache JMeter</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>CRM Workflow & Functional Validation</h3>
+        <div class="subtitle">Cubastion Consulting | Jan 2024 – Jan 2025</div>
+        <ul>
+          <li>Performed manual functional, UI, and workflow testing across 20+ modules on Salesforce and Siebel CRM platforms.</li>
+          <li>Authored comprehensive test scenarios, smoke checklists, and regression suites mapped to client specifications.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <div class="card">
+        <ul>
+          <li>Salesforce Certified AI Specialist</li>
+          <li>Salesforce Certified AI Associate</li>
+          <li>Selenium WebDriver with Java (Udemy)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="card">
+        <h3>B.Tech in Computer Science Engineering</h3>
+        <div class="subtitle">Chandigarh Group of Colleges (2020 – 2024) | CGPA: 8.29</div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© Saloni Bhatia. Hosted on GitHub Pages.</p>
+    </footer>
+  </div>
+</body>
+</html>
